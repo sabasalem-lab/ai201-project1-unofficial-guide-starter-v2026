@@ -21,6 +21,11 @@
 
 ## What This Does
 
+This system answers questions about campus life — things like course
+add/drop policies, dining dollars, financial aid quirks, and housing —
+using a corpus of 88 short student-life posts. It retrieves the most
+relevant post(s) for a question and generates a grounded answer that
+names its source.
 <!-- Three or four sentences. Which corpus you picked, and the kinds of
      questions your system answers. Write it for someone who has never seen
      this repo.
