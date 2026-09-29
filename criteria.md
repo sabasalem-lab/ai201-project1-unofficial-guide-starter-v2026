@@ -23,9 +23,7 @@ For at least 4 of my 5 test questions, the retrieved chunks include one that
 contains the answer.
 
 **Why this target:**
-<!-- e.g. "One of my questions is about a topic only two documents mention, so
-     I expect that one to be hard." -->
-
+My five questions are directly based on information covered in my corpus. Each question focuses on a specific fact, such as the add/drop deadlines, work-study and financial aid, declaring a major, or dining dollars. Because these topics are explicitly discussed in the documents, I expect at least four of the five questions to retrieve a chunk containing the information needed to answer the question.
 ---
 
 ## 2. Every answer names a source
@@ -33,8 +31,7 @@ contains the answer.
 Every answer the system produces names at least one source document.
 
 **Why this target:**
-<!-- Why all five and not four? What about your setup makes that achievable —
-     or what would have to go wrong for it not to be? -->
+I expect every answer to name at least one source because my questions are all about information contained in my corpus. The system is designed to retrieve relevant documents before generating an answer, so each answer should be supported by one of those documents. This should be achievable as long as the retrieval step finds a relevant chunk for each question and the answer-generation step includes the source information.
 
 ---
 
@@ -57,36 +54,25 @@ in at least 4 of 5 tries.
 
 ## 4. Something about your chunks
 
-<!-- YOU WRITE THIS ONE.
+At least 4 of the first 5 chunks in the run log contain one complete campus-life post, with no sentence cut off at the start or end.
 
-     How would you know if your chunks were the right size? Name something
-     countable or observable.
+Why this target:
 
-     Examples of the right shape — don't copy these, they should come from
-     what you actually saw in Milestone 3:
-       - "At least 4 of 5 sampled chunks read as a complete thought, with no
-          sentence cut in half at either end."
-       - "No chunk is shorter than 200 characters, since anything below that
-          in my corpus turned out to be a heading with no content under it." -->
+My corpus contains 88 short student-life posts about topics such as dining dollars, course add/drop policies, financial aid, and housing. Since these posts are relatively short, I expect each chunk to contain a complete post rather than splitting important information across multiple chunks. I chose 4 out of 5 because some posts may be longer or contain more information than others, making them harder to fit into a single chunk.
 
 
-
-**Why this target:**
 
 
 
 ---
 
-## 5. Your choice
+## 5. Correct Source Attribution
 
-<!-- YOU WRITE THIS ONE TOO.
+At least 4 of 5 test answers cite the correct source document that contains the information used in the answer.
 
-     Pick something you actually care about getting right. It could be about
-     speed, about refusals, about a particular kind of question your corpus
-     handles badly, about source attribution being correct rather than merely
-     present — anything, as long as it names a number or an observable
-     outcome. -->
+Why this target:
 
+My campus-life corpus contains 88 student-life posts covering different topics, so the system needs to identify the correct source rather than simply naming any document. I chose 4 out of 5 because some posts may discuss similar topics, making it harder for the system to identify the exact source every time.
 
 
 **Why this target:**
