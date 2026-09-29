@@ -47,8 +47,13 @@ in at least 4 of 5 tries.
      just keep five of them, or the "4 of 5" above has nothing to be 4 of. -->
 
 **Why this target:**
-<!-- What did your distances look like when you set the cutoff in Milestone 4?
-     Was there a clean gap, or did the two groups overlap? -->
+When I ran my five in-corpus questions and my five OUT_OF_SCOPE questions
+through retrieval, I saw a clean gap with no overlap: my in-corpus questions
+all scored between 0.244 and 0.388, and my out-of-scope questions all scored
+between 0.825 and 0.934, a gap of more than 0.4. Given a separation that
+clean, I'd actually expect the gate to succeed 5 of 5 rather than just 4 of
+5 — but I'm keeping 4 of 5 as my stated target in case a future test
+question lands closer to the boundary than any of these ten did.
 
 ---
 

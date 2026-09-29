@@ -99,27 +99,35 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
      visible. Milestone 4. -->
 
 **Question:**
+What happens to unused dining dollars at the end of spring?
 
 **Answer:**
+Whatever dining dollars are left in May (at the end of the spring semester)
+disappear; they do not roll over to the following autumn.
 
+Source: admin_dining_dollars.txt
 ```
 ```
 
-**My relevance cutoff:**
+**My relevance cutoff:** 0.6
 
-<!-- The number you set in config.py, and how you got there.
-
-     You ran five questions your corpus covers and the five in OUT_OF_SCOPE
-     that it clearly doesn't, and wrote down the best distance for each. What
-     did those two groups look like? Where was the gap? Put the actual numbers
-     here — the table below wants all ten rows.
-
-     Milestone 4. -->
+I kept the starter's default of 0.6. My five in-corpus questions all scored
+between 0.244 and 0.388, and my five out-of-scope questions all scored
+between 0.825 and 0.934 — a clean gap of more than 0.4 with no overlap
+between the two groups. 0.6 sits safely in the middle of that gap.
 
 | Question | In corpus? | Best distance |
 |---|---|---|
-|  |  |  |
-
+| Can I add a course after the first week of the semester? | Yes | 0.388 |
+| What happens to unused dining dollars at the end of spring? | Yes | 0.255 |
+| What is the deadline for dropping a class without getting a W? | Yes | 0.264 |
+| How late can I drop a class? | Yes | 0.371 |
+| Do work-study earnings count against financial aid? | Yes | 0.244 |
+| What is the capital of Mongolia? | No | 0.825 |
+| How do I change the oil in a diesel engine? | No | 0.934 |
+| Who won the 1994 World Cup? | No | 0.886 |
+| What is the recommended dosage of ibuprofen for a headache? | No | 0.844 |
+| How do I write a for loop in Rust? | No | 0.896 |
 ## How I Used AI
 
 <!-- Two specific moments. For each: what you asked for, what came back, and
