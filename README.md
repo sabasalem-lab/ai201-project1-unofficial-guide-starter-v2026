@@ -102,13 +102,12 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
 What happens to unused dining dollars at the end of spring?
 
 **Answer:**
+`
 Whatever dining dollars are left in May (at the end of the spring semester)
 disappear; they do not roll over to the following autumn.
 
 Source: admin_dining_dollars.txt
-```
-```
-
+`
 **My relevance cutoff:** 0.6
 
 I kept the starter's default of 0.6. My five in-corpus questions all scored
@@ -139,9 +138,9 @@ between the two groups. 0.6 sits safely in the middle of that gap.
 
      Milestone 5. -->
 
-**1.**
+**1.The chroma-hnswlib compiler saga, I asked claude for help fixing a pip install error, it first suggested a --no-deps workaround, but it turned out I needed to actually install Microsoft C++ Build Tools since the exact pinned version had no Windows wheel available.**
 
-**2.**
+**2.The mysterious "packages install successfully but test.py can't find them" bug ,I initially assumed the venv path was wrong, but the real cause turned out to be that plain pip was resolving to a different Python than your venv's, fixed by switching to python -m pip.**
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
