@@ -270,8 +270,10 @@ In Milestone 3 (Unit 2), I diagnosed criterion 1 as the least-tested of my five 
 All five in-corpus questions still passed the gate (distances 0.206–0.373, still under the 0.6 cutoff) and the gate still refused all 5 out-of-scope questions. On the surface, every criterion still shows MET.
 
 But reading the actual generated text tells a different story. On "What is the deadline for dropping a class without getting a W?", run 1 produced this:
-```Based on the documents provided, you can add a course through the end of the second week, and dropping through that same time frame (the end of week two) avoids showing a "W" on your transcript, as drops after week two show a "W" through the end of week six.```
-
+   Based on the documents provided, you can add a course through the end of
+   the second week, and dropping through that same time frame (the end of
+   week two) avoids showing a "W" on your transcript, as drops after week
+   two show a "W" through the end of week six.
 Compare that to the same question in the "before" run: a clean, single sentence citing the correct deadline. This "after" answer conflates the add-course deadline with the drop deadline and reads confusingly — a real comprehension failure that the aggregate numbers don't capture. Runs 2 and 3 of the same question came out clean, so this failure appeared in only 1 of 3 runs, on 1 of 5 questions.
 
 I also noticed source diversity dropped. Before, the dining-dollars question retrieved 5 distinct source files; after, only 2. The
