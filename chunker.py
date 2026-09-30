@@ -92,6 +92,11 @@ def split_documents(documents: list[Document]) -> list[Chunk]:
     deadlines. Splitting by character count would only risk cutting a post's
     one useful sentence in half for no benefit, since nothing here is long
     enough to need it. So the chunk boundary is the document boundary.
+
+    In Milestone 4 (Unit 2), I temporarily switched this to fallback_split
+    with a small CHUNK_SIZE as a comparison experiment. It made things worse
+    (see README's "The Improvement" section), so this is the restored,
+    original version.
     """
     chunks: list[Chunk] = []
     for doc in documents:
@@ -106,7 +111,6 @@ def split_documents(documents: list[Document]) -> list[Chunk]:
                 )
             )
     return chunks
-
 
 def describe(chunks: list[Chunk]) -> str:
     """A one-line summary, printed after indexing."""

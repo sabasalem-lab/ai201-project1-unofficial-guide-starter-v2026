@@ -102,12 +102,12 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
 What happens to unused dining dollars at the end of spring?
 
 **Answer:**
-`
+```
 Whatever dining dollars are left in May (at the end of the spring semester)
 disappear; they do not roll over to the following autumn.
 
 Source: admin_dining_dollars.txt
-`
+```
 **My relevance cutoff:** 0.6
 
 I kept the starter's default of 0.6. My five in-corpus questions all scored
@@ -138,9 +138,9 @@ between the two groups. 0.6 sits safely in the middle of that gap.
 
      Milestone 5. -->
 
-**1.The chroma-hnswlib compiler saga, I asked claude for help fixing a pip install error, it first suggested a --no-deps workaround, but it turned out I needed to actually install Microsoft C++ Build Tools since the exact pinned version had no Windows wheel available.**
+**I asked Claude for help fixing a pip install error with chroma-hnswlib. It first suggested a --no-deps workaround, but the real fix was installing Microsoft C++ Build Tools, since the exact pinned version had no prebuilt Windows wheel available.**
 
-**2.The mysterious "packages install successfully but test.py can't find them" bug ,I initially assumed the venv path was wrong, but the real cause turned out to be that plain pip was resolving to a different Python than your venv's, fixed by switching to python -m pip.**
+**I initially assumed my venv path itself was wrong when packages installed successfully but test.py still couldn't import them. The actual cause was that plain pip was resolving to a different Python install than my venv's — switching to python -m pip fixed it.**
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
@@ -169,99 +169,122 @@ between the two groups. 0.6 sits safely in the middle of that gap.
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
 
-<!-- Underneath, paste the REAL output for each criterion from one of your
-     runs — the actual text your system produced, not a description of it.
-     Name the file and function that produced it. -->
+     
+     
+### Can I add a course after the first week of the semester? — run 1
+
+- Best distance: 0.3881 (passed the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_declaring_a_major.txt, admin_pass_fail_option.txt, advising_registration.txt, course_cs_340.txt
+
+Yes, you can add a course through the end of the second week.
+
+Source: admin_add_drop_deadline.txt
+
+
+### Can I add a course after the first week of the semester? — run 2
+
+- Best distance: 0.3881 (passed the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_declaring_a_major.txt, admin_pass_fail_option.txt, advising_registration.txt, course_cs_340.txt
+
+Yes, you can add a course through the end of the second week.
+
+Source: admin_add_drop_deadline.txt
+
+
+### Can I add a course after the first week of the semester? — run 3
+
+- Best distance: 0.3881 (passed the gate)
+- Sources retrieved: admin_add_drop_deadline.txt, admin_declaring_a_major.txt, admin_pass_fail_option.txt, advising_registration.txt, course_cs_340.txt
+
+Yes, you can add a course through the end of the second week.
+
+Source: admin_add_drop_deadline.txt
+
+
+### What happens to unused dining dollars at the end of spring? — run 1
+
+- Best distance: 0.2550 (passed the gate)
+- Sources retrieved: admin_dining_dollars.txt, admin_meal_plan_changes.txt, dining_halden_hall.txt, dining_north_kitchen.txt, dining_the_atrium.txt
+
+Whatever dining dollars are left in May (at the end of spring) disappear and do not roll over to the following autumn.
+
+Source: admin_dining_dollars.txt
+
+
+### What happens to unused dining dollars at the end of spring? — run 2
+
+- Best distance: 0.2550 (passed the gate)
+- Sources retrieved: admin_dining_dollars.txt, admin_meal_plan_changes.txt, dining_halden_hall.txt, dining_north_kitchen.txt, dining_the_atrium.txt
+
+Whatever is left in May disappears (it does not roll over from the spring to the following autumn).
+
+Source: admin_dining_dollars.txt
+
+
+### What happens to unused dining dollars at the end of spring? — run 3
+
+- Best distance: 0.2550 (passed the gate)
+- Sources retrieved: admin_dining_dollars.txt, admin_meal_plan_changes.txt, dining_halden_hall.txt, dining_north_kitchen.txt, dining_the_atrium.txt
+
+Whatever dining dollars are left in May (at the end of the spring semester) disappear; they do not roll over to the following autumn (admin_dining_dollars.txt).
 
 ## Verdicts
 
-<!-- MET or MISSED for each of the five, against the target you wrote last
-     unit — not a new one. Plus a sentence on how you decided. That sentence
-     matters most where it was close.
-
-     If your target said 4 of 5 and your runs came out 4, 3, 4, that's a MISS.
-     The target has to hold, not show up occasionally.
-
-     Milestone 2. -->
-
 | # | Criterion | Verdict | How I decided |
 |---|---|---|---|
-| 1 |  |  |  |
-| 2 |  |  |  |
-| 3 |  |  |  |
-| 4 |  |  |  |
-| 5 |  |  |  |
+| 1 | Retrieved chunks contain the answer | MET | All 5 questions had the correct fact present in the retrieved chunks, across all 3 runs (5/5 every time, target was 4/5). |
+| 2 | Every answer names a source | MET | Every single answer across all 3 runs cited its source file (5/5 every time, target was 5/5). |
+| 3 | Gate stops out-of-corpus questions | MET | The gate refused 5 of 5 out-of-scope questions (target was 4/5). |
+| 4 | Something about your chunks | MET | All 5 sample chunks read as complete, self-contained posts with nothing cut off. |
+| 5 | Correct source attribution | MET | Every answer's cited source file matched the actual topic of the question. |
 
 ## Diagnoses
 
-<!-- For each miss: which stage caused it, and how. The stage alone isn't
-     enough — you need the mechanism.
+I missed nothing, all 5 criteria came out MET across all 3 runs. That likely means my targets were set safely rather than my system being flawless.
 
-     Not a diagnosis: "Question 3 didn't work."
-     A diagnosis:     "Question 3 asks about laundry costs. The answer is in
-                       one sentence that got split across two chunks, so
-                       neither chunk on its own contains it."
-
-     The five stages: loading → chunking → embedding → retrieval → generation.
-
-     Look for a pattern. If three misses all ask about numbers, that's one
-     problem, not three.
-
-     Missed nothing? Say so, then say honestly whether your targets were set
-     low, and which one you'd tighten and to what.
-
-     Milestone 3. -->
+Criterion 1 is the one I'd tighten. My 5 test questions are all simple, single-fact lookups on clearly distinct topics (add/drop, dining dollars,
+work-study), so retrieval never had to distinguish between similar-sounding posts. A harder test would include a question where two different posts discuss related topics - e.g. two different dorms both mentioning laundry costs - so retrieval actually has to pick the right one apart from a close competitor, not just find "the one post about X" when there's only one post about X in the whole corpus.
 
 ## The Improvement
 
 **What I changed:**
 
+I lowered `CHUNK_SIZE` in `config.py` from its original value to 150 characters and temporarily switched `split_documents` in `chunker.py` to call `fallback_split` instead of my own one-post-per-chunk strategy. This forced posts that used to be one whole chunk to split into multiple small fragments (88 documents became 972 chunks, average 116 characters, some as short as 1 character).
+
 **Why I picked it:**
 
-<!-- Connect it to a specific diagnosis above in one sentence. If you can't,
-     you picked a fix because it sounded impressive. -->
+In Milestone 3 (Unit 2), I diagnosed criterion 1 as the least-tested of my five criteria, since my original chunker keeps every post whole and never has to prove it can handle fragmented context. I wanted to test what happens if that assumption is forced to break.
 
 ### Run Log — After
 
-<!-- Same format, same five criteria, three runs each.
-     `python run_eval.py --label after` -->
-
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1. Retrieved chunk contains the answer | 4 of 5 |  |  |  |  |
-| 2. Every answer names a source | 5 of 5 |  |  |  |  |
-| 3. Gate stops out-of-corpus questions | 4 of 5 |  |  |  |  |
-| 4. | | | | | |
-| 5. | | | | | |
+| 1. Retrieved chunk contains the answer | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 2. Every answer names a source | 5 of 5 | 5/5 | 5/5 | 5/5 | MET |
+| 3. Gate stops out-of-corpus questions | 4 of 5 | 5/5 | 5/5 | 5/5 | MET |
+
+All five in-corpus questions still passed the gate (distances 0.206–0.373, still under the 0.6 cutoff) and the gate still refused all 5 out-of-scope questions. On the surface, every criterion still shows MET.
+
+But reading the actual generated text tells a different story. On "What is the deadline for dropping a class without getting a W?", run 1 produced this:
+```Based on the documents provided, you can add a course through the end of the second week, and dropping through that same time frame (the end of week two) avoids showing a "W" on your transcript, as drops after week two show a "W" through the end of week six.```
+
+Compare that to the same question in the "before" run: a clean, single sentence citing the correct deadline. This "after" answer conflates the add-course deadline with the drop deadline and reads confusingly — a real comprehension failure that the aggregate numbers don't capture. Runs 2 and 3 of the same question came out clean, so this failure appeared in only 1 of 3 runs, on 1 of 5 questions.
+
+I also noticed source diversity dropped. Before, the dining-dollars question retrieved 5 distinct source files; after, only 2. The
+work-study question went from 5 distinct files to just 1. With 972 small chunks instead of 88, several of the top-5 retrieved chunks now often come from the *same* file, crowding out other documents that might have added useful context.
 
 **Did it help?**
 
-<!-- Say plainly whether it did, and how you know. If it made things worse,
-     say that — a change that backfired, honestly reported, earns full credit
-     and is more interesting than one that worked. What matters is that you can
-     tell.
-
-     Milestone 4. -->
+No. The pass/fail numbers stayed the same, but this wasn't a real improvement — it introduced a genuine coherence failure in 1 of 3 runs and reduced the diversity of sources retrieved per question, for no measurable benefit. I reverted `chunker.py` and `config.py` back to my original one-post-per-chunk strategy, which is the version reflected in the rest of this repository.
 
 ## What's Still Broken
 
-<!-- For each criterion still missed after your fix: what you'd do about it,
-     and why you stopped where you did.
-
-     "I ran out of time" is fine if it's true. Pretending nothing is left is
-     not.
-
-     Milestone 5. -->
+Officially, nothing — all 5 criteria are MET. But my Milestone 4 experiment surfaced a real, unlabeled weakness: when chunks get small and numerous, answer coherence can degrade even while every named criterion still passes. None of my 5 criteria would have caught that failure, since it doesn't show up in distance scores or in whether a source was named. If I continued, I'd add a sixth criterion specifically testing answer coherence/consistency across repeated runs of the same question, not just whether the right fact is present.
 
 ## What I'd Do Differently
 
-<!-- Knowing what you know now — which of your five criteria would you write
-     differently, and why?
-
-     Milestone 5. -->
+I'd tighten criterion 1 to specifically include at least one question about two related-but-distinct topics (e.g. two different dorms, or two different deadlines), since my current 5 questions are all clearly separated topics that never forced retrieval to discriminate between close competitors. I'd also add a criterion about answer coherence, since my Milestone 4 experiment showed a system can pass every existing criterion while still occasionally producing a confused, conflated answer.
